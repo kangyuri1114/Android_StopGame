@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Practice02</string>
+    <string name="app_name">Timer Game</string>
     <string name="title_activity_main_kt">MainActivityKt</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
