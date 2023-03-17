@@ -1,9 +1,11 @@
 package com.example.practice02
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import java.lang.Math.abs
 import java.util.Timer
 import kotlin.concurrent.timer
@@ -64,6 +66,20 @@ class MainActivity : AppCompatActivity() {
 
         val btn: Button = findViewById(R.id.btn_mainStart)
         val btn_Back: Button = findViewById(R.id.btn_Back)
+
+        val background_main: ConstraintLayout = findViewById(R.id.background_main)
+
+        val color_list = mutableListOf<String>("#32E9321E", "#32E98E1E", "#32E9C41E")
+        var color_index = k%3-1
+        if(color_index == -1) {
+            color_index = 2
+        }
+
+        //배경색 후보군 리스트 만들고 참가자별 색 지정하기
+          val color_sel = color_list.get(color_index)
+
+        //배경 색 지정 후 바꾸기
+        background_main.setBackgroundColor(Color.parseColor(color_sel))
 
         //랜덤 수 생성하기 박스 변수
         val random_box = java.util.Random() //변수
@@ -143,3 +159,6 @@ class MainActivity : AppCompatActivity() {
         start()
     }
 }
+
+
+
